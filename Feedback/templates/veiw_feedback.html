@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Feedback Records</h1>
+    </header>
+
+    <section>
+        <h2>Customer Feedback</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Feedback</th>
+                <th>Rating</th>
+            </tr>
+            {% for name, email, feedback, rating in customer_feedback %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ email }}</td>
+                <td>{{ feedback }}</td>
+                <td>{{ rating }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Driver Feedback</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Driver ID</th>
+                <th>Feedback</th>
+                <th>Rating</th>
+            </tr>
+            {% for name, driver_id, feedback, rating in driver_feedback %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ driver_id }}</td>
+                <td>{{ feedback }}</td>
+                <td>{{ rating }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>
